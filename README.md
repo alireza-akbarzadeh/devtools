@@ -10,13 +10,6 @@
 - **Efficiency**: Streamline your development process with our carefully curated toolkit, designed to optimize your workflow.
 - **Flexibility**: From small-scale projects to enterprise-level applications, [Devtools] adapts to suit your project's requirements seamlessly.
 
-## Getting Started
-
-Ready to dive in? Follow these simple steps to get started with [Devtools]:
-
-1. **Clone the Repository**: Begin by cloning the [Project Name] repository to your local machine.
-2. **Install Dependencies**: Install any necessary dependencies required to run [Devtools].
-3. **Explore Documentation**: Dive into our comprehensive documentation to discover the full potential of [Devtools].
 
 ## Documentation
 

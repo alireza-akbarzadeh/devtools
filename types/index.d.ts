@@ -87,4 +87,4 @@ export type InfoLdg = {
   image: string;
   description: string;
   list: InfoList[];
-}
+};

@@ -107,40 +107,36 @@ export function UserAuthForm({ className, type, ...props }: UserAuthFormProps) {
           </span>
         </div>
       </div>
-
-      <Button
-        variant="destructive"
-        className={cn(buttonVariants({ variant: "outline" }))}
-        onClick={() => {
-          setIsProviderLoading("github");
-          signIn("github");
-        }}
-        disabled={isLoading || isProviderLoading === "github"}
-      >
-        {isProviderLoading === "github" ? (
-          <Icons.spinner className="mr-2 size-4 animate-spin" />
-        ) : (
+      <div className="flex items-center justify-between gap-2">
+        <Button
+          variant="destructive"
+          className={"flex-1"}
+          onClick={() => {
+            setIsProviderLoading("github");
+            signIn("github");
+          }}
+          loading={isLoading || isProviderLoading === "github"}
+        >
+          {isProviderLoading === "github" ? (
+            <Icons.spinner className="mr-2 size-4 animate-spin" />
+          ) : (
+            <Icons.gitHub className="mr-2 size-4" />
+          )}{" "}
+          Github
+        </Button>
+        <Button
+          variant="outline"
+          className={"flex-1"}
+          onClick={() => {
+            setIsProviderLoading("google");
+            signIn("google");
+          }}
+          loading={isLoading || isProviderLoading === "google"}
+        >
           <Icons.google className="mr-2 size-4" />
-        )}{" "}
-        Github
-      </Button>
-
-      <button
-        type="button"
-        className={cn(buttonVariants({ variant: "outline" }))}
-        onClick={() => {
-          setIsProviderLoading("google");
-          signIn("google");
-        }}
-        disabled={isLoading || isProviderLoading === "google"}
-      >
-        {isProviderLoading === "google" ? (
-          <Icons.spinner className="mr-2 size-4 animate-spin" />
-        ) : (
-          <Icons.google className="mr-2 size-4" />
-        )}{" "}
-        Google
-      </button>
+          Google
+        </Button>
+      </div>
     </div>
   );
 }

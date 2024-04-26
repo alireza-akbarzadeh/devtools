@@ -109,12 +109,9 @@ export function NewsletterForm() {
           size="sm"
           rounded="full"
           className="mt-2 px-4"
+          loading={isLoading}
         >
-          {isLoading ? (
-            <Icons.spinner className="mr-2 size-4 animate-spin" />
-          ) : (
-            "Subscribe"
-          )}
+          Subscribe
         </Button>
       </form>
     </Form>

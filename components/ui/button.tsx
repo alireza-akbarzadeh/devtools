@@ -1,7 +1,9 @@
-import * as React from "react"
-import { VariantProps, cva } from "class-variance-authority"
+import * as React from "react";
+import { cva, VariantProps } from "class-variance-authority";
 
-import { cn } from "@/lib/utils"
+import { cn } from "@/lib/utils";
+
+import { Icons } from "../shared/icons";
 
 const buttonVariants = cva(
   "inline-flex items-center justify-center text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background",
@@ -37,24 +39,44 @@ const buttonVariants = cva(
       size: "default",
       rounded: "default",
     },
-  }
-)
+  },
+);
 
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof buttonVariants> {}
+    VariantProps<typeof buttonVariants> {
+  loading?: boolean;
+}
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant, size, rounded, ...props }, ref) => {
+  (
+    {
+      className,
+      variant,
+      size,
+      children,
+      disabled,
+      loading,
+      rounded,
+      ...props
+    },
+    ref,
+  ) => {
     return (
-      <button
-        className={cn(buttonVariants({ variant, size, rounded, className }))}
-        ref={ref}
-        {...props}
-      />
-    )
-  }
-)
-Button.displayName = "Button"
+      <div className="flex items-center gap-2">
+        <button
+          disabled={loading || disabled}
+          className={cn(buttonVariants({ variant, size, rounded, className }))}
+          ref={ref}
+          {...props}
+        >
+          {children}
+          {loading && <Icons.spinner className="ml-2 size-4 animate-spin" />}
+        </button>
+      </div>
+    );
+  },
+);
+Button.displayName = "Button";
 
-export { Button, buttonVariants }
+export { Button, buttonVariants };

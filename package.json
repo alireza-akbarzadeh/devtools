@@ -1,10 +1,10 @@
 {
-  "name": "saas-starter",
+  "name": "devtools",
   "version": "0.1.0",
   "private": true,
   "author": {
-    "name": "mickasmt",
-    "url": "https://twitter.com/mickasmt"
+    "name": "Alireza",
+    "url": "https://twitter.com/@AAkbarzadehDev"
   },
   "scripts": {
     "dev": "next dev",

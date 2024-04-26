@@ -43,7 +43,7 @@ export function NavBar({
         <div className="flex items-center space-x-3">
           {rightElements}
 
-          {/* {!user ? (
+          {!user ? (
             <Link
               href="/login"
               className={cn(
@@ -56,7 +56,7 @@ export function NavBar({
             >
               Login Page
             </Link>
-          ) : null} */}
+          ) : null}
 
           {user ? (
             <UserAccountNav user={user} />

@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import { Resend } from "resend";
 import { z } from "zod";
 
 import { Button } from "@/components/ui/button";
@@ -36,6 +35,7 @@ export function NewsletterForm() {
     resolver: zodResolver(FormSchema),
     defaultValues: {
       email: "",
+      name: "",
     },
   });
 

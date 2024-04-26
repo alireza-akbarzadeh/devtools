@@ -8,7 +8,7 @@ import { Icons } from "@/components/shared/icons";
 
 export async function HeroLanding() {
   const { stargazers_count: stars } = await fetch(
-    "https://api.github.com/repos/mickasmt/next-saas-stripe-starter",
+    "https://api.github.com/repos/alireza-akbarzadeh/devtools",
     {
       ...(env.GITHUB_OAUTH_TOKEN && {
         headers: {
@@ -42,7 +42,7 @@ export async function HeroLanding() {
         <h1 className="text-balance font-urban text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl lg:text-[66px]">
           Kick off with a bang with{" "}
           <span className="text-gradient_indigo-purple font-extrabold">
-            SaaS Starter
+            Dev Tools
           </span>
         </h1>
 
@@ -50,8 +50,8 @@ export async function HeroLanding() {
           className="max-w-2xl text-balance leading-normal text-muted-foreground sm:text-xl sm:leading-8"
           style={{ animationDelay: "0.35s", animationFillMode: "forwards" }}
         >
-          Build your next project using Next.js 14, Prisma, Neon, Auth.js
-          v5, Resend, React Email, Shadcn/ui, Stripe.
+          Build your next project using Next.js 14, Prisma, Neon, Auth.js v5,
+          Resend, React Email, Shadcn/ui, Stripe.
         </p>
 
         <div

@@ -1,7 +1,9 @@
-import Google from "next-auth/providers/google"
-import { env } from "@/env.mjs"
+import type { NextAuthConfig } from "next-auth";
+import Github from "next-auth/providers/github";
+import Google from "next-auth/providers/google";
 
-import type { NextAuthConfig } from "next-auth"
+import { env } from "@/env.mjs";
+
 // import { siteConfig } from "@/config/site"
 // import { getUserByEmail } from "@/lib/user";
 // import MagicLinkEmail from "@/emails/magic-link-email"
@@ -12,6 +14,10 @@ export default {
     Google({
       clientId: env.GOOGLE_CLIENT_ID,
       clientSecret: env.GOOGLE_CLIENT_SECRET,
+    }),
+    Github({
+      clientId: env.GITHUB_CLIENT_ID,
+      clientSecret: env.GITHUB_CLIENT_SECRET,
     }),
     // Email({
     //   sendVerificationRequest: async ({ identifier, url, provider }) => {
@@ -50,4 +56,4 @@ export default {
     //   },
     // }),
   ],
-} satisfies NextAuthConfig
+} satisfies NextAuthConfig;

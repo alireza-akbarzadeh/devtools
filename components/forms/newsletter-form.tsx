@@ -1,7 +1,9 @@
 "use client";
 
+import { useState } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
+import { Resend } from "resend";
 import { z } from "zod";
 
 import { Button } from "@/components/ui/button";
@@ -16,13 +18,20 @@ import {
 import { Input } from "@/components/ui/input";
 import { toast } from "@/components/ui/use-toast";
 
+import { Icons } from "../shared/icons";
+
 const FormSchema = z.object({
   email: z.string().email({
     message: "Enter a valid email.",
   }),
+  name: z.string({
+    message: "Enter a your name.",
+  }),
 });
 
 export function NewsletterForm() {
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
     defaultValues: {
@@ -30,16 +39,27 @@ export function NewsletterForm() {
     },
   });
 
-  function onSubmit(data: z.infer<typeof FormSchema>) {
-    form.reset();
-    toast({
-      title: "You submitted the following values:",
-      description: (
-        <pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
-          <code className="text-white">{JSON.stringify(data, null, 2)}</code>
-        </pre>
-      ),
-    });
+  async function onSubmit(data: z.infer<typeof FormSchema>) {
+    setIsLoading(true);
+    try {
+      await fetch("/api/email", {
+        method: "POST",
+        body: JSON.stringify(data),
+      });
+      toast({
+        title: "Subscription Successful",
+        description: `Thank you, ${data.name}, for subscribing to our newsletter.`,
+      });
+      setIsLoading(false);
+      form.reset();
+    } catch (error) {
+      toast({
+        title: "Subscription Failed",
+        description: `We're sorry, ${data.name}, we couldn't process your subscription request at the moment. Please try again later.`,
+        variant: "destructive",
+      });
+    }
+    setIsLoading(false);
   }
 
   return (
@@ -50,10 +70,27 @@ export function NewsletterForm() {
       >
         <FormField
           control={form.control}
-          name="email"
+          name="name"
           render={({ field }) => (
             <FormItem>
               <FormLabel>Subscribe to our newsletter</FormLabel>
+              <FormControl>
+                <Input
+                  type="text"
+                  className="rounded-full px-4"
+                  placeholder="your name"
+                  {...field}
+                />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name="email"
+          render={({ field }) => (
+            <FormItem>
               <FormControl>
                 <Input
                   type="email"
@@ -66,8 +103,18 @@ export function NewsletterForm() {
             </FormItem>
           )}
         />
-        <Button type="submit" size="sm" rounded="full" className="px-4">
-          Subscribe
+        <Button
+          disabled={!form.formState.isValid}
+          type="submit"
+          size="sm"
+          rounded="full"
+          className="mt-2 px-4"
+        >
+          {isLoading ? (
+            <Icons.spinner className="mr-2 size-4 animate-spin" />
+          ) : (
+            "Subscribe"
+          )}
         </Button>
       </form>
     </Form>

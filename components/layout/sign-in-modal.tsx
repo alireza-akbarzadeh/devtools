@@ -1,17 +1,19 @@
 "use client";
 
 import { useState } from "react";
+import { signIn } from "next-auth/react";
 
-import { Icons } from "@/components/shared/icons";
-import { Modal } from "@/components/shared/modal";
-import { Button } from "@/components/ui/button";
 import { siteConfig } from "@/config/site";
 import { useSigninModal } from "@/hooks/use-signin-modal";
-import { signIn } from "next-auth/react";
+import { Button } from "@/components/ui/button";
+import { Icons } from "@/components/shared/icons";
+import { Modal } from "@/components/shared/modal";
 
 export const SignInModal = () => {
   const signInModal = useSigninModal();
-  const [signInClicked, setSignInClicked] = useState(false);
+  const [signInClicked, setSignInClicked] = useState<
+    "github" | "google" | "none"
+  >("none");
 
   return (
     <Modal showModal={signInModal.isOpen} setShowModal={signInModal.onClose}>
@@ -30,23 +32,43 @@ export const SignInModal = () => {
         <div className="flex flex-col space-y-4 bg-secondary/50 px-4 py-8 md:px-16">
           <Button
             variant="default"
-            disabled={signInClicked}
+            disabled={signInClicked === "google"}
             onClick={() => {
-              setSignInClicked(true);
+              setSignInClicked("google");
               signIn("google", { redirect: false }).then(() =>
                 // TODO: fix this without setTimeOut(), modal closes too quickly. Idea: update value before redirect
                 setTimeout(() => {
                   signInModal.onClose();
-                }, 1000)
+                }, 1000),
               );
             }}
           >
-            {signInClicked ? (
+            {signInClicked === "google" ? (
               <Icons.spinner className="mr-2 size-4 animate-spin" />
             ) : (
               <Icons.google className="mr-2 size-4" />
             )}{" "}
             Sign In with Google
+          </Button>
+          <Button
+            variant="destructive"
+            disabled={signInClicked === "github"}
+            onClick={() => {
+              setSignInClicked("github");
+              signIn("github", { redirect: false }).then(() =>
+                // TODO: fix this without setTimeOut(), modal closes too quickly. Idea: update value before redirect
+                setTimeout(() => {
+                  signInModal.onClose();
+                }, 1000),
+              );
+            }}
+          >
+            {signInClicked === "github" ? (
+              <Icons.spinner className="mr-2 size-4 animate-spin" />
+            ) : (
+              <Icons.gitHub className="mr-2 size-4" />
+            )}{" "}
+            Sign In with Github
           </Button>
         </div>
       </div>

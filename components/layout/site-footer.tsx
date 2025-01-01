@@ -38,9 +38,9 @@ export function SiteFooter({ className }: React.HTMLAttributes<HTMLElement>) {
 
       <div className="border-t py-4">
         <div className="container flex items-center justify-between">
-          {/* <span className="text-muted-foreground text-sm">
+          <span className="text-sm text-muted-foreground">
             Copyright &copy; 2024. All rights reserved.
-          </span> */}
+          </span>
           <p className="text-left text-sm text-muted-foreground">
             Built by{" "}
             <Link
@@ -49,7 +49,7 @@ export function SiteFooter({ className }: React.HTMLAttributes<HTMLElement>) {
               rel="noreferrer"
               className="font-medium underline underline-offset-4"
             >
-              mickasmt
+              alireza-akbarzadeh
             </Link>
             . Hosted on{" "}
             <Link

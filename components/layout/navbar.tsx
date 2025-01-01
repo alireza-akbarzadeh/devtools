@@ -37,7 +37,6 @@ export function NavBar({
     >
       <div className="container flex h-[60px] items-center justify-between py-4">
         <MainNav items={items}>{children}</MainNav>
-
         <div className="flex items-center space-x-3">
           {rightElements}
           <ModeToggle />

@@ -4,13 +4,13 @@ import { env } from "@/env.mjs";
 const site_url = env.NEXT_PUBLIC_APP_URL;
 
 export const siteConfig: SiteConfig = {
-  name: "Dev Tools",
+  name: "DevTools",
   description:
     "DevTools is a comprehensive toolkit designed to empower developers by providing them with a versatile set of tools and technologies. Whether you're embarking on a solo coding adventure or collaborating on a large-scale project, Devtools is your reliable companion throughout the development journey.",
   url: site_url,
   ogImage: `${site_url}/og.jpg`,
   links: {
-    twitter: "https://twitter.com/miickasmt",
+    twitter: "https://twitter.com/AAkbarzadehDev",
     github: "https://github.com/alireza-akbarzadeh/devtools",
   },
   mailSupport: "support@saas-starter.com",

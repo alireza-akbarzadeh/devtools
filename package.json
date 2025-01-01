@@ -142,5 +142,6 @@
     "typescript": "5.4.5",
     "unist-util-visit": "^5.0.0",
     "vitest": "^1.5.2"
-  }
+  },
+  "packageManager": "pnpm@8.6.12+sha256.3ed40ffc6cbb00790ab325e9d3ff5517a3ed5b763ec53a411707b1702a411174"
 }

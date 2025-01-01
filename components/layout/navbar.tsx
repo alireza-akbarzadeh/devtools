@@ -10,6 +10,7 @@ import { buttonVariants } from "@/components/ui/button";
 
 import { Icons } from "../shared/icons";
 import { MainNav } from "./main-nav";
+import { ModeToggle } from "./mode-toggle";
 
 interface NavBarProps {
   user: Pick<User, "name" | "image" | "email"> | undefined;
@@ -39,7 +40,7 @@ export function NavBar({
 
         <div className="flex items-center space-x-3">
           {rightElements}
-
+          <ModeToggle />
           {!user ? (
             <Link
               href="/login"

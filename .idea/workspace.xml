@@ -4,41 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="28aeb76e-e5f1-4d61-a868-adba869b4146" name="Changes" comment="feat: setup devtools app for the new landing page">
-      <change afterPath="$PROJECT_DIR$/assets/avatar-1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/avatar-2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/avatar-3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/avatar-4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/grid-lines.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/icon-click.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/icon-guage.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/icon-menu.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/icon-stars.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/logo-acme.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/logo-apex.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/logo-celestial.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/logo-echo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/logo-pulse.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/logo-quantum.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/logo.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/product-image.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/social-instagram.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/social-x.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/social-youtube.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/stars.png" afterDir="false" />
+    <list default="true" id="28aeb76e-e5f1-4d61-a868-adba869b4146" name="Changes" comment="feat: setup assets files">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(marketing)/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(marketing)/layout.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(marketing)/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(marketing)/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/layout/main-nav.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/layout/main-nav.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/layout/navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/layout/navbar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/sections/header.tsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/components/shared/icons.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/shared/icons.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/tailwind-indicator.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/tailwind-indicator.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/hero.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/hero.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/work-from-home.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/work-from-home.jpg" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -151,7 +121,7 @@
       <updated>1735731037877</updated>
       <workItem from="1735731039632" duration="287000" />
       <workItem from="1738151070333" duration="795000" />
-      <workItem from="1738151907096" duration="4806000" />
+      <workItem from="1738151907096" duration="5278000" />
     </task>
     <task id="LOCAL-00001" summary="feat: setup devtools app for the new landing page">
       <option name="closed" value="true" />
@@ -161,7 +131,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738155413123</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="feat: setup assets files">
+      <option name="closed" value="true" />
+      <created>1738157269982</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1738157269982</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -169,6 +147,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="feat: setup devtools app for the new landing page" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: setup devtools app for the new landing page" />
+    <MESSAGE value="feat: setup assets files" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: setup assets files" />
   </component>
 </project>

@@ -9,7 +9,6 @@ import {
   CreditCard,
   File,
   FileText,
-  Hammer,
   HelpCircle,
   Image,
   Laptop,

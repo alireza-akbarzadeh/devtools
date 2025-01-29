@@ -26,7 +26,8 @@ import {
   Trash,
   User,
   X,
-} from "lucide-react";
+} from 'lucide-react';
+import { LogoIcon } from '@/assets';
 
 export type Icon = LucideIcon;
 
@@ -78,7 +79,7 @@ export const Icons = {
   ),
   help: HelpCircle,
   laptop: Laptop,
-  logo: Hammer,
+  logo: LogoIcon,
   media: Image,
   moon: Moon,
   page: File,

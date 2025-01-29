@@ -111,6 +111,7 @@
     "@storybook/nextjs": "^8.0.9",
     "@storybook/react": "^8.0.9",
     "@storybook/test": "^8.0.9",
+    "@svgr/webpack": "^8.1.0",
     "@tailwindcss/line-clamp": "^0.4.4",
     "@tailwindcss/typography": "^0.5.12",
     "@testing-library/react": "^15.0.5",

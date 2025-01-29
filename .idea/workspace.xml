@@ -4,11 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="28aeb76e-e5f1-4d61-a868-adba869b4146" name="Changes" comment="feat: setup assets files">
+    <list default="true" id="28aeb76e-e5f1-4d61-a868-adba869b4146" name="Changes" comment="refactor: remove warning files">
+      <change afterPath="$PROJECT_DIR$/components/sections/hero-landing-copy.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(marketing)/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(marketing)/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/layout/main-nav.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/layout/main-nav.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/shared/icons.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/shared/icons.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/layout/navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/layout/navbar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/sections/hero-landing.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/sections/hero-landing.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/sections/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/components/sections/index.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,14 +46,14 @@
       </list>
     </option>
   </component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/alireza-akbarzadeh/devtools.git&quot;,
-    &quot;accountId&quot;: &quot;05b91f10-e5cd-45c7-9b2d-ad206c207f61&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/alireza-akbarzadeh/devtools.git",
+    "accountId": "bbd3e296-629b-4847-8798-5513b7adc47c"
   }
-}</component>
+}]]></component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -80,7 +82,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
     "js.linters.configure.manually.selectedeslint": "true",
-    "last_opened_file_path": "D:/devtools",
+    "last_opened_file_path": "D:/devtools/components/sections",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.standard": "true",
     "node.js.detected.package.tslint": "true",
@@ -96,6 +98,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\devtools\components\sections" />
       <recent name="D:\devtools" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -121,7 +124,7 @@
       <updated>1735731037877</updated>
       <workItem from="1735731039632" duration="287000" />
       <workItem from="1738151070333" duration="795000" />
-      <workItem from="1738151907096" duration="5278000" />
+      <workItem from="1738151907096" duration="7876000" />
     </task>
     <task id="LOCAL-00001" summary="feat: setup devtools app for the new landing page">
       <option name="closed" value="true" />
@@ -139,7 +142,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738157269982</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="refactor: remove warning files">
+      <option name="closed" value="true" />
+      <created>1738157499741</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1738157499741</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -148,6 +159,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="feat: setup devtools app for the new landing page" />
     <MESSAGE value="feat: setup assets files" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: setup assets files" />
+    <MESSAGE value="refactor: remove warning files" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: remove warning files" />
   </component>
 </project>

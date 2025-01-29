@@ -48,9 +48,14 @@ export function NavBar({
                 buttonVariants({
                   rounded: 'full',
                 }),
-                'px-4',
+                'relative bg-gradient-to-b from-[#190d2e] to-[#4a208a] px-4 shadow-[0px_0px_12px_#8c45ff]',
               )}
             >
+              <div className="absolute inset-0 rounded-lg  border">
+                <div className="[mask-image:linear-gradient(to_bottom,black,transparent))] absolute inset-0  rounded-lg border border-white/20" />
+                <div className="[mask-image:linear-gradient(to_top,black,transparent))] absolute inset-0  rounded-lg border border-white/40" />
+                <div className="absolute inset-0 rounded-lg shadow-[0_0_10px_rgba(140,69,255,.7)_inset]" />
+              </div>
               <span>Sign In</span>
               <Icons.arrowRight className="size-4" />
             </Link>

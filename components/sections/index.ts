@@ -1,1 +1,1 @@
-export { Header } from './header';
+export { HeroLanding } from './hero-landing';

@@ -12,6 +12,7 @@ import { Icons } from '../shared/icons';
 import { MainNav } from './main-nav';
 import { ModeToggle } from './mode-toggle';
 import React from 'react';
+import { GlowEButton } from '../shared/glow-button';
 
 interface NavBarProps {
   user: Pick<User, 'name' | 'image' | 'email'> | undefined;
@@ -42,23 +43,10 @@ export function NavBar({
           {rightElements}
           <ModeToggle />
           {!user ? (
-            <Link
-              href="/login"
-              className={cn(
-                buttonVariants({
-                  rounded: 'full',
-                }),
-                'relative bg-gradient-to-b from-[#190d2e] to-[#4a208a] px-4 shadow-[0px_0px_12px_#8c45ff]',
-              )}
-            >
-              <div className="absolute inset-0 rounded-lg  border">
-                <div className="[mask-image:linear-gradient(to_bottom,black,transparent))] absolute inset-0  rounded-lg border border-white/20" />
-                <div className="[mask-image:linear-gradient(to_top,black,transparent))] absolute inset-0  rounded-lg border border-white/40" />
-                <div className="absolute inset-0 rounded-lg shadow-[0_0_10px_rgba(140,69,255,.7)_inset]" />
-              </div>
+            <GlowEButton href="/login">
               <span>Sign In</span>
-              <Icons.arrowRight className="size-4" />
-            </Link>
+              <Icons.arrowRight className="ml-1 size-4" />
+            </GlowEButton>
           ) : null}
         </div>
       </div>

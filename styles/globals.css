@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -57,13 +56,18 @@
 
   body {
     @apply bg-background text-foreground;
-    font-feature-settings: "rlig" 1, "calt" 1;
+    font-feature-settings:
+      'rlig' 1,
+      'calt' 1;
   }
 }
 
 @layer utilities {
   .step {
     counter-increment: step;
+  }
+  .position-center {
+    @apply absolute left-1/2 top-1/2 -translate-x-1/2  -translate-y-1/2;
   }
 
   .step:before {
@@ -81,8 +85,8 @@
 }
 
 .text-gradient_red-rose-orange-red {
-background: linear-gradient(90deg, #FF033E 0%,rgba(255,69, 9, 0.6) 100%);
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-background-clip: text;
+  background: linear-gradient(90deg, #ff033e 0%, rgba(255, 69, 9, 0.6) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }

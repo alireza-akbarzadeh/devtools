@@ -41,7 +41,7 @@ export function NavBar({
         <MainNav items={items}>{children}</MainNav>
         <div className="flex items-center space-x-3">
           {rightElements}
-          <ModeToggle />
+          {/* <ModeToggle /> */}
           {!user ? (
             <GlowEButton href="/login">
               <span>Sign In</span>

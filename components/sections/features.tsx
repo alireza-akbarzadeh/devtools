@@ -28,17 +28,11 @@ export function Features() {
                   transform: `translate3d(${feature.backgroundPositionX}%, ${feature.backgroundPositionY}%, ${feature.backgroundPositionZ}px)`,
                 }}
               />
-              <div className="relative rounded-lg border border-white/20">
-                <LottiePlayer
-                  options={feature.icon}
-                  width={56}
-                  height={56}
-                  showControls={false}
-                  className="custom-class"
-                />
-              </div>
-              <div className=" flex items-center gap-4">
-                <h3 className="text-lg font-semibold">{feature.title}</h3>
+              <div className="relative size-14 rounded-lg border border-white/20"></div>
+              <div className="flex items-center gap-4">
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+                  {feature.title}
+                </h3>
                 {feature.isNew && (
                   <span className="rounded-full bg-purple-500/10 px-2 py-0.5 text-xs text-purple-500">
                     New
@@ -55,6 +49,14 @@ export function Features() {
           ></div>
         </div>
       </div>
+
+      <LottiePlayer
+        options={'/lottie/click.lottie'}
+        width={56}
+        height={56}
+        showControls={false}
+        className="custom-class"
+      />
     </section>
   );
 }

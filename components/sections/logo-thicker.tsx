@@ -27,7 +27,7 @@ export function LogoThicker() {
       <div className="container">
         <div className="flex items-center gap-5">
           <div className="flex-1">
-            <h2 className="text-2xl font-bold">
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
               Trusted by top innovative teams
             </h2>
           </div>

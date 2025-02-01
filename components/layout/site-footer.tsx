@@ -6,17 +6,23 @@ export function SiteFooter({ className }: React.HTMLAttributes<HTMLElement>) {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className={cn('relative w-full  py-16', className)}>
+    <footer
+      className={cn(
+        'relative w-full bg-white py-16 dark:bg-transparent',
+        className,
+      )}
+    >
       <div className="container">
         <div className="grid grid-cols-1 gap-16 md:grid-cols-4">
-          {/* About Section */}
           <div className="space-y-4">
-            <h4 className="text-sm font-medium text-white">ABOUT</h4>
+            <h4 className="text-sm font-medium text-gray-900 dark:text-white">
+              ABOUT
+            </h4>
             <ul className="space-y-3">
               <li>
                 <a
                   href="/about"
-                  className="text-sm text-white/60 hover:text-primary"
+                  className="text-sm text-gray-600 hover:text-primary dark:text-white/60 dark:hover:text-primary"
                 >
                   About
                 </a>
@@ -24,7 +30,7 @@ export function SiteFooter({ className }: React.HTMLAttributes<HTMLElement>) {
               <li>
                 <a
                   href="/submit-issue"
-                  className="text-sm text-white/60 hover:text-primary"
+                  className="text-sm text-gray-600 hover:text-primary dark:text-white/60 dark:hover:text-primary"
                 >
                   Submit an Issue
                 </a>
@@ -32,7 +38,7 @@ export function SiteFooter({ className }: React.HTMLAttributes<HTMLElement>) {
               <li>
                 <a
                   href={siteConfig.links.github}
-                  className="text-sm text-white/60 hover:text-primary"
+                  className="text-sm text-gray-600 hover:text-primary dark:text-white/60 dark:hover:text-primary"
                 >
                   GitHub Repo
                 </a>
@@ -40,7 +46,7 @@ export function SiteFooter({ className }: React.HTMLAttributes<HTMLElement>) {
               <li>
                 <a
                   href="/slack"
-                  className="text-sm text-white/60 hover:text-primary"
+                  className="text-sm text-gray-600 hover:text-primary dark:text-white/60 dark:hover:text-primary"
                 >
                   Slack
                 </a>
@@ -48,14 +54,15 @@ export function SiteFooter({ className }: React.HTMLAttributes<HTMLElement>) {
             </ul>
           </div>
 
-          {/* Getting Started Section */}
           <div className="space-y-4">
-            <h4 className="text-sm font-medium text-white">GETTING STARTED</h4>
+            <h4 className="text-sm font-medium text-gray-900 dark:text-white">
+              GETTING STARTED
+            </h4>
             <ul className="space-y-3">
               <li>
                 <a
                   href="/docs/introduction"
-                  className="text-sm text-white/60 hover:text-primary"
+                  className="text-sm text-gray-600 hover:text-primary dark:text-white/60 dark:hover:text-primary"
                 >
                   Introduction
                 </a>
@@ -63,7 +70,7 @@ export function SiteFooter({ className }: React.HTMLAttributes<HTMLElement>) {
               <li>
                 <a
                   href="/docs"
-                  className="text-sm text-white/60 hover:text-primary"
+                  className="text-sm text-gray-600 hover:text-primary dark:text-white/60 dark:hover:text-primary"
                 >
                   Documentation
                 </a>
@@ -71,7 +78,7 @@ export function SiteFooter({ className }: React.HTMLAttributes<HTMLElement>) {
               <li>
                 <a
                   href="/usage"
-                  className="text-sm text-white/60 hover:text-primary"
+                  className="text-sm text-gray-600 hover:text-primary dark:text-white/60 dark:hover:text-primary"
                 >
                   Usage
                 </a>
@@ -79,7 +86,7 @@ export function SiteFooter({ className }: React.HTMLAttributes<HTMLElement>) {
               <li>
                 <a
                   href="/components"
-                  className="text-sm text-white/60 hover:text-primary"
+                  className="text-sm text-gray-600 hover:text-primary dark:text-white/60 dark:hover:text-primary"
                 >
                   Components
                 </a>
@@ -87,7 +94,7 @@ export function SiteFooter({ className }: React.HTMLAttributes<HTMLElement>) {
               <li>
                 <a
                   href="/themes"
-                  className="text-sm text-white/60 hover:text-primary"
+                  className="text-sm text-gray-600 hover:text-primary dark:text-white/60 dark:hover:text-primary"
                 >
                   Themes
                 </a>
@@ -95,14 +102,15 @@ export function SiteFooter({ className }: React.HTMLAttributes<HTMLElement>) {
             </ul>
           </div>
 
-          {/* Resources Section */}
           <div className="space-y-4">
-            <h4 className="text-sm font-medium text-white">RESOURCES</h4>
+            <h4 className="text-sm font-medium text-gray-900 dark:text-white">
+              RESOURCES
+            </h4>
             <ul className="space-y-3">
               <li>
                 <a
                   href="/api"
-                  className="text-sm text-white/60 hover:text-primary"
+                  className="text-sm text-gray-600 hover:text-primary dark:text-white/60 dark:hover:text-primary"
                 >
                   API
                 </a>
@@ -110,7 +118,7 @@ export function SiteFooter({ className }: React.HTMLAttributes<HTMLElement>) {
               <li>
                 <a
                   href="/community"
-                  className="text-sm text-white/60 hover:text-primary"
+                  className="text-sm text-gray-600 hover:text-primary dark:text-white/60 dark:hover:text-primary"
                 >
                   Community
                 </a>
@@ -118,7 +126,7 @@ export function SiteFooter({ className }: React.HTMLAttributes<HTMLElement>) {
               <li>
                 <a
                   href="/design"
-                  className="text-sm text-white/60 hover:text-primary"
+                  className="text-sm text-gray-600 hover:text-primary dark:text-white/60 dark:hover:text-primary"
                 >
                   Design Defined
                 </a>
@@ -126,7 +134,7 @@ export function SiteFooter({ className }: React.HTMLAttributes<HTMLElement>) {
               <li>
                 <a
                   href="/marketplace"
-                  className="text-sm text-white/60 hover:text-primary"
+                  className="text-sm text-gray-600 hover:text-primary dark:text-white/60 dark:hover:text-primary"
                 >
                   Marketplace
                 </a>
@@ -134,10 +142,11 @@ export function SiteFooter({ className }: React.HTMLAttributes<HTMLElement>) {
             </ul>
           </div>
 
-          {/* Social Media Section */}
           <div className="space-y-4">
-            <h4 className="text-sm font-medium text-white">SOCIAL MEDIA</h4>
-            <p className="text-sm text-white/60">
+            <h4 className="text-sm font-medium text-gray-900 dark:text-white">
+              SOCIAL MEDIA
+            </h4>
+            <p className="text-sm text-gray-600 dark:text-white/60">
               Follow us on social media to find out the latest updates on our
               progress.
             </p>
@@ -146,7 +155,7 @@ export function SiteFooter({ className }: React.HTMLAttributes<HTMLElement>) {
                 href={siteConfig.links.twitter}
                 target="_blank"
                 rel="noreferrer"
-                className="text-white/60 transition-colors hover:text-primary"
+                className="text-gray-600 transition-colors hover:text-primary dark:text-white/60 dark:hover:text-primary"
               >
                 <Icons.twitter className="size-5" />
                 <span className="sr-only">Twitter</span>
@@ -155,38 +164,18 @@ export function SiteFooter({ className }: React.HTMLAttributes<HTMLElement>) {
                 href={siteConfig.links.github}
                 target="_blank"
                 rel="noreferrer"
-                className="text-white/60 transition-colors hover:text-primary"
+                className="text-gray-600 transition-colors hover:text-primary dark:text-white/60 dark:hover:text-primary"
               >
                 <Icons.gitHub className="size-5" />
                 <span className="sr-only">GitHub</span>
-              </a>
-              <a
-                href="https://facebook.com"
-                target="_blank"
-                rel="noreferrer"
-                className="text-white/60 transition-colors hover:text-primary"
-              >
-                {/* <Icons.facebook className="size-5" /> */}
-                <span className="sr-only">Facebook</span>
-              </a>
-              <a
-                href="https://discord.com"
-                target="_blank"
-                rel="noreferrer"
-                className="text-white/60 transition-colors hover:text-primary"
-              >
-                {/* <Icons.discord className="size-5" /> */}
-                <span className="sr-only">Discord</span>
               </a>
             </div>
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="mt-16 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 text-sm text-white/60 md:flex-row">
+        <div className="mt-16 flex flex-col items-center justify-between gap-4 border-t border-gray-200 pt-8 text-sm text-gray-600 dark:border-white/10 dark:text-white/60 md:flex-row">
           <div className="flex items-center gap-4">
             <span>
-              {' '}
               {currentYear} {siteConfig.name}. All rights reserved.
             </span>
           </div>
@@ -200,11 +189,10 @@ export function SiteFooter({ className }: React.HTMLAttributes<HTMLElement>) {
             <a href="/security" className="hover:text-primary">
               Security
             </a>
-            S
             <a href="/sitemap" className="hover:text-primary">
               Sitemap
             </a>
-            <div className="flex items-center gap-2 border-l border-white/10 pl-4">
+            <div className="flex items-center gap-2 border-l border-gray-200 pl-4 dark:border-white/10">
               <span>English</span>
               <Icons.chevronDown className="size-4" />
             </div>

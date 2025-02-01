@@ -10,8 +10,8 @@ export function Features() {
     <section id="features" className="py-20 md:py-24">
       <div className="max-w-8xl container space-y-6">
         <HeaderSection
-          titleClassName="text-5xl font-medium"
-          subtitleClassName="text-white/70 text-lg md:text-xl mx-auto  max-w-2xl text-center mt-5"
+          titleClassName="text-5xl font-medium dark:text-white text-gray-900"
+          subtitleClassName="dark:text-white/70 text-gray-600 text-lg md:text-xl mx-auto max-w-2xl text-center mt-5"
           title="Evaluate your SEO efforts."
           subtitle="From small startups to large enterprises. our AI-driven tool has revolutionized the way business approaches SEO."
         />
@@ -19,7 +19,7 @@ export function Features() {
           {features.map((feature) => (
             <div
               key={feature.title}
-              className="group relative flex items-center gap-4 overflow-hidden rounded-lg border border-white/20 bg-background p-2.5 lg:flex-1"
+              className="group relative flex items-center gap-4 overflow-hidden rounded-lg border border-gray-200 bg-white p-2.5 dark:border-white/20 dark:bg-background lg:flex-1"
             >
               <div
                 className="absolute inset-0 flex -translate-y-1/2 items-center bg-gradient-to-b from-purple-500/20 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100"

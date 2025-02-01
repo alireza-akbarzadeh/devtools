@@ -81,45 +81,51 @@ export const features = [
 
 export const testimonials = [
   {
-    name: 'John Doe',
-    job: 'Full Stack Developer',
-    image: 'https://randomuser.me/api/portraits/men/1.jpg',
+    name: 'Sarah Chen',
+    job: 'Senior Software Architect @ Tesla',
+    image: 'https://randomuser.me/api/portraits/women/8.jpg',
     review:
-      "The next-saas-stripe-starter repo has truly revolutionized my development workflow. With its comprehensive features and seamless integration with Stripe, I've been able to build and deploy projects faster than ever before. The documentation is clear and concise, making it easy to navigate through the setup process. I highly recommend next-saas-stripe-starter to any developer.",
+      'The AI-powered analytics have completely transformed how we approach our technical documentation. The insights are incredibly precise and actionable.',
+    rating: 3,
   },
   {
-    name: 'Alice Smith',
-    job: 'UI/UX Designer',
-    image: 'https://randomuser.me/api/portraits/women/2.jpg',
+    name: 'James Rodriguez',
+    job: 'Head of SEO @ Spotify',
+    image: 'https://randomuser.me/api/portraits/men/32.jpg',
     review:
-      "Thanks to next-saas-stripe-starter, I've been able to create modern and attractive user interfaces in record time. The starter kit provides a solid foundation for building sleek and intuitive designs, allowing me to focus more on the creative aspects of my work.",
+      'Finally, an SEO tool that understands context! The AI suggestions are spot-on, and the real-time analytics have boosted our organic traffic by 156%.',
+    rating: 5,
   },
   {
-    name: 'David Johnson',
-    job: 'DevOps Engineer',
-    image: 'https://randomuser.me/api/portraits/men/3.jpg',
+    name: 'Emma Watson',
+    job: 'Digital Marketing Lead @ Airbnb',
+    image: 'https://randomuser.me/api/portraits/women/3.jpg',
     review:
-      'Thanks to next-saas-stripe-starter, I was able to streamline the entire process and get payments up and running in no time. ',
+      "The predictive analytics feature is a game-changer. We're now able to optimize content before it even goes live.",
+    rating: 5,
   },
   {
-    name: 'Michael Wilson',
-    job: 'Project Manager',
-    image: 'https://randomuser.me/api/portraits/men/5.jpg',
+    name: 'Alex Thompson',
+    job: 'CTO @ Stripe',
+    image: 'https://randomuser.me/api/portraits/men/4.jpg',
     review:
-      "I'm impressed by the quality of code and clear documentation of next-saas-stripe-starter. Kudos to the team!",
+      'Implementing this tool increased our search visibility by 200%. The AI recommendations are incredibly accurate.',
+    rating: 3,
   },
   {
-    name: 'Sophia Garcia',
-    job: 'Data Analyst',
-    image: 'https://randomuser.me/api/portraits/women/6.jpg',
+    name: 'Mira Patel',
+    job: 'Growth Manager @ Notion',
+    image: 'https://randomuser.me/api/portraits/women/23.jpg',
     review:
-      'next-saas-stripe-starter provided me with the tools I needed to efficiently manage user data. Thank you so much!',
+      'The real-time keyword analysis and competitor tracking have given us an edge we never had before. Absolutely essential for modern SEO.',
+    rating: 5,
   },
   {
-    name: 'Emily Brown',
-    job: 'Marketing Manager',
-    image: 'https://randomuser.me/api/portraits/women/4.jpg',
+    name: 'David Kim',
+    job: 'VP of Engineering @ Vercel',
+    image: 'https://randomuser.me/api/portraits/men/41.jpg',
     review:
-      "next-saas-stripe-starter has been an invaluable asset in my role as a marketing manager. With its seamless integration with Stripe, I've been able to launch targeted marketing campaigns with built-in payment functionality, allowing us to monetize our products and services more effectively.",
+      'The integration was seamless, and the AI insights have helped us optimize our documentation for maximum visibility. Outstanding tool!',
+    rating: 5,
   },
 ];

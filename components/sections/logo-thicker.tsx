@@ -36,14 +36,14 @@ export function LogoThicker() {
             role="group"
             aria-label="Partner company logos"
           >
-            <div className="flex gap-14">
+            <div className="flex gap-6">
               {COMPANY_LOGOS.map((logo) => (
-                <div key={logo.name} className="relative h-6 w-full">
+                <div key={logo.name} className="relative aspect-square w-full">
                   <Image
                     src={logo.src.src}
                     alt={`${logo.name} logo`}
                     fill
-                    sizes="(max-width: 768px) 33vw, 20vw"
+                    sizes="(max-width: 768px) 60vw, 60vw"
                     className="object-contain"
                   />
                 </div>

@@ -7,6 +7,8 @@ import EchoLogo from './logo-echo.png';
 import PulseLogo from './logo-pulse.png';
 import QuantumLogo from './logo-quantum.png';
 import ProductImage from './product-image.png';
+import StarsBg from './stars.png';
+import GridLense from './grid-lines.png';
 
 export {
   LogoIcon,
@@ -18,4 +20,6 @@ export {
   PulseLogo,
   QuantumLogo,
   ProductImage,
+  StarsBg,
+  GridLense,
 };

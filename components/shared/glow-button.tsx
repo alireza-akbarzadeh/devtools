@@ -1,20 +1,17 @@
 import { cn } from '@/lib/utils';
 import { buttonVariants } from '@/components/ui/button';
 import Link from 'next/link';
+import { ComponentProps } from 'react';
 
-interface GlowButtonProps {
+interface GlowButtonProps extends ComponentProps<'button'> {
   href?: string;
   onClick?: () => void;
   children: React.ReactNode;
   className?: string;
 }
 
-export function GlowEButton({
-  href,
-  onClick,
-  children,
-  className,
-}: GlowButtonProps) {
+export function GlowEButton(props: GlowButtonProps) {
+  const { href, onClick, children, className, ...rest } = props;
   const content = (
     <>
       <div className="absolute inset-0 rounded-lg border">
@@ -43,7 +40,7 @@ export function GlowEButton({
   }
 
   return (
-    <button onClick={onClick} className={baseClassName}>
+    <button onClick={onClick} className={baseClassName} {...rest}>
       {content}
     </button>
   );

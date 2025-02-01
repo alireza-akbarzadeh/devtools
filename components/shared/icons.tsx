@@ -24,6 +24,7 @@ import {
   SunMedium,
   Trash,
   User,
+  ChevronDown,
   X,
 } from 'lucide-react';
 import { LogoIcon } from '@/assets';
@@ -33,6 +34,7 @@ export type Icon = LucideIcon;
 export const Icons = {
   add: Plus,
   mail: Mail,
+  chevronDown: ChevronDown,
   arrowRight: ArrowRight,
   arrowUpRight: ArrowUpRight,
   billing: CreditCard,

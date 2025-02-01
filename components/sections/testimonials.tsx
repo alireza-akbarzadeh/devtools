@@ -37,11 +37,11 @@ export function Testimonials() {
               </blockquote>
 
               <div className="mt-6 flex items-center gap-4">
-                <div className="relative size-12 overflow-hidden rounded-full border border-white/10">
+                <div className="relative size-12 overflow-hidden rounded-full border border-white/10 after:absolute after:inset-0 after:bg-[rgb(170,81,255)] after:mix-blend-soft-light after:content-['']">
                   <Image
                     src={testimonial.image}
                     alt={`Avatar for ${testimonial.name}`}
-                    className="object-cover"
+                    className="border border-white/30 object-cover grayscale"
                     fill
                     sizes="(max-width: 768px) 48px, 48px"
                   />

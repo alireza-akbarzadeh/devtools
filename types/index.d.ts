@@ -88,3 +88,8 @@ export type InfoLdg = {
   description: string;
   list: InfoList[];
 };
+
+declare module '*.lottie' {
+  const content: string;
+  export default content;
+}

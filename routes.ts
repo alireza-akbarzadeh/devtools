@@ -9,6 +9,7 @@ export const publicRoutes = [
   "/docs",
   "/guides",
   "/pricing",
+  "/plan-advisor", // Adding the new route
 ];
 
 /**

@@ -1,6 +1,6 @@
 import { MarketingConfig } from "types";
 
-export const marketingConfig: MarketingConfig = {
+export const marketingConfig = {
   mainNav: [
     {
       title: "Pricing",
@@ -21,6 +21,10 @@ export const marketingConfig: MarketingConfig = {
     {
       title: "License",
       href: "/license",
+    },
+    {
+      title: "Plan Advisor",
+      href: "/plan-advisor",
     },
   ],
 };

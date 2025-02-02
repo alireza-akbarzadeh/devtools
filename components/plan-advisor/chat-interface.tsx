@@ -1,17 +1,11 @@
 'use client';
 
 import * as React from 'react';
-import { Button } from '@/components/ui/button';
-import { Textarea } from '@/components/ui/textarea';
+
 import { Avatar } from '@/components/ui/avatar';
 import { Icons } from '@/components/shared/icons';
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from '@/components/ui/tooltip';
 import { useChat } from './hooks/use-chat';
+import { ChatInput } from './chat-input';
 
 export function ChatInterface() {
   const { messages, input, setInput, isLoading, messagesEndRef, handleSubmit } =
@@ -40,7 +34,7 @@ export function ChatInterface() {
                 </Avatar>
                 <div className="flex-1 space-y-2">
                   <div
-                    className={`rounded-xl px-4 py-3 ${message.role === 'assistant' ? 'bg-muted/50' : 'bg-primary text-primary-foreground'}`}
+                    className={`rounded-xl px-4 py-3 ${message.role === 'assistant' ? 'bg-muted/50' : 'bg-primary/20 text-foreground'}`}
                   >
                     <p className="whitespace-pre-wrap leading-relaxed">
                       {message.content}
@@ -74,131 +68,7 @@ export function ChatInterface() {
           </div>
         </div>
       </div>
-
-      <form onSubmit={handleSubmit} className="border-t bg-background p-4">
-        <div className="mx-auto max-w-3xl">
-          <div className="flex flex-col gap-4">
-            <div className="flex gap-2">
-              <div className="flex flex-1 gap-2">
-                <Textarea
-                  value={input}
-                  onChange={(e) => setInput(e.target.value)}
-                  placeholder="Type your message..."
-                  className="max-h-[200px] min-h-[52px] resize-none rounded-xl bg-muted/50 focus-visible:ring-1 focus-visible:ring-primary"
-                  onKeyDown={(e) => {
-                    if (e.key === 'Enter' && !e.shiftKey) {
-                      e.preventDefault();
-                      handleSubmit(e);
-                    }
-                  }}
-                  style={{
-                    overflow: 'auto',
-                    transition: 'height 200ms ease-out',
-                  }}
-                />
-                <div className="flex gap-2">
-                  <TooltipProvider>
-                    <Tooltip>
-                      <TooltipTrigger asChild>
-                        <Button
-                          type="button"
-                          size="icon"
-                          variant="ghost"
-                          className="shrink-0 rounded-xl hover:bg-muted/50"
-                        >
-                          <Icons.search className="size-5" />
-                        </Button>
-                      </TooltipTrigger>
-                      <TooltipContent>Search messages</TooltipContent>
-                    </Tooltip>
-                  </TooltipProvider>
-
-                  <TooltipProvider>
-                    <Tooltip>
-                      <TooltipTrigger asChild>
-                        <Button
-                          type="button"
-                          size="icon"
-                          variant="ghost"
-                          className="shrink-0 rounded-xl hover:bg-muted/50"
-                        >
-                          <Icons.brain className="size-5" />
-                        </Button>
-                      </TooltipTrigger>
-                      <TooltipContent>AI suggestions</TooltipContent>
-                    </Tooltip>
-                  </TooltipProvider>
-
-                  <TooltipProvider>
-                    <Tooltip>
-                      <TooltipTrigger asChild>
-                        <Button
-                          type="submit"
-                          size="icon"
-                          className="shrink-0 rounded-xl"
-                          disabled={isLoading || !input.trim()}
-                        >
-                          <Icons.send className="size-5" />
-                        </Button>
-                      </TooltipTrigger>
-                      <TooltipContent>Send message (Enter)</TooltipContent>
-                    </Tooltip>
-                  </TooltipProvider>
-                </div>
-              </div>
-            </div>
-            <div className="flex gap-2">
-              <TooltipProvider>
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <Button variant="ghost" size="sm" className="rounded-lg">
-                      <Icons.image className="mr-2 size-4" />
-                      Create Image
-                    </Button>
-                  </TooltipTrigger>
-                  <TooltipContent>Generate AI images</TooltipContent>
-                </Tooltip>
-              </TooltipProvider>
-
-              <TooltipProvider>
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <Button variant="ghost" size="sm" className="rounded-lg">
-                      <Icons.lightbulb className="mr-2 size-4" />
-                      Get advice
-                    </Button>
-                  </TooltipTrigger>
-                  <TooltipContent>Get AI recommendations</TooltipContent>
-                </Tooltip>
-              </TooltipProvider>
-
-              <TooltipProvider>
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <Button variant="ghost" size="sm" className="rounded-lg">
-                      <Icons.fileText className="mr-2 size-4" />
-                      Summarize text
-                    </Button>
-                  </TooltipTrigger>
-                  <TooltipContent>AI text summarization</TooltipContent>
-                </Tooltip>
-              </TooltipProvider>
-
-              <TooltipProvider>
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <Button variant="ghost" size="sm" className="rounded-lg">
-                      <Icons.helpCircle className="mr-2 size-4" />
-                      Help me write
-                    </Button>
-                  </TooltipTrigger>
-                  <TooltipContent>AI writing assistance</TooltipContent>
-                </Tooltip>
-              </TooltipProvider>
-            </div>
-          </div>
-        </div>
-      </form>
+      <ChatInput input={input} setInput={setInput} onSubmit={handleSubmit} />
     </div>
   );
 }

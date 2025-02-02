@@ -1,15 +1,10 @@
 'use client';
 
-import * as React from 'react';
-import { Send, Image, FileText, Mic, MoreHorizontal } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from '@/components/ui/tooltip';
+import { Send } from 'lucide-react';
+import * as React from 'react';
+import { ChatInputActions } from './chat-action';
 
 interface ChatInputProps {
   input: string;
@@ -19,12 +14,14 @@ interface ChatInputProps {
 
 export function ChatInput({ input, setInput, onSubmit }: ChatInputProps) {
   const textareaRef = React.useRef<HTMLTextAreaElement>(null);
+  const [height, setHeight] = React.useState(52);
 
   const adjustTextareaHeight = () => {
     const textarea = textareaRef.current;
     if (textarea) {
       textarea.style.height = 'auto';
-      textarea.style.height = `${Math.min(textarea.scrollHeight, 200)}px`;
+      const newHeight = Math.min(textarea.scrollHeight, 200);
+      setHeight(newHeight);
     }
   };
 
@@ -40,10 +37,13 @@ export function ChatInput({ input, setInput, onSubmit }: ChatInputProps) {
   };
 
   return (
-    <div className="border-t border-gray-800 p-4">
-      <form onSubmit={onSubmit} className="relative space-y-4">
-        <ChatInputActions />
-        <div className="relative">
+    <div className="flex flex-col border-t border-gray-800 bg-background p-4">
+      <ChatInputActions />
+      <div
+        className="relative flex w-full items-end transition-all duration-200 ease-out"
+        style={{ minHeight: '52px' }}
+      >
+        <div className="absolute bottom-0 w-full">
           <Textarea
             ref={textareaRef}
             value={input}
@@ -54,8 +54,9 @@ export function ChatInput({ input, setInput, onSubmit }: ChatInputProps) {
             onKeyDown={handleKeyDown}
             placeholder="Message ChatGPT..."
             rows={1}
-            className="min-h-[52px] w-full resize-none rounded-2xl border-gray-700 bg-[#262626] pr-12 text-white placeholder:text-gray-400 focus:border-gray-600"
+            className="w-full resize-none rounded-2xl border-0 bg-[#262626] pr-12 text-white placeholder:text-gray-400 focus:ring-2 focus:ring-orange-500/20 focus:ring-offset-0"
             style={{
+              height: `${height}px`,
               maxHeight: '200px',
               overflow: 'auto',
             }}
@@ -63,76 +64,16 @@ export function ChatInput({ input, setInput, onSubmit }: ChatInputProps) {
           <Button
             type="submit"
             size="icon"
-            className="absolute bottom-1.5 right-1.5 size-8 rounded-xl bg-orange-600 p-2 hover:bg-orange-700 disabled:opacity-50"
+            className="absolute bottom-2 right-2 size-8 rounded-xl bg-orange-600 p-2 hover:bg-orange-700 disabled:opacity-50"
             disabled={!input.trim()}
           >
             <Send className="size-4" />
           </Button>
         </div>
-      </form>
-      <div className="mt-2 text-center text-xs text-gray-500">
-        Press Enter to send, Shift + Enter for new line
+        <div className="border-t border-gray-800 px-4 py-2 text-center text-xs text-gray-500">
+          Press Enter to send, Shift + Enter for new line
+        </div>
       </div>
-    </div>
-  );
-}
-
-function ChatInputActions() {
-  return (
-    <div className="flex items-center gap-2 px-2">
-      <TooltipProvider>
-        <Tooltip>
-          <TooltipTrigger asChild>
-            <Button
-              type="button"
-              variant="ghost"
-              size="icon"
-              className="text-gray-400 hover:text-gray-300"
-            >
-              <Image className="size-4" />
-            </Button>
-          </TooltipTrigger>
-          <TooltipContent>Upload image</TooltipContent>
-        </Tooltip>
-      </TooltipProvider>
-      <TooltipProvider>
-        <Tooltip>
-          <TooltipTrigger asChild>
-            <Button
-              type="button"
-              variant="ghost"
-              size="icon"
-              className="text-gray-400 hover:text-gray-300"
-            >
-              <FileText className="size-4" />
-            </Button>
-          </TooltipTrigger>
-          <TooltipContent>Upload file</TooltipContent>
-        </Tooltip>
-      </TooltipProvider>
-      <TooltipProvider>
-        <Tooltip>
-          <TooltipTrigger asChild>
-            <Button
-              type="button"
-              variant="ghost"
-              size="icon"
-              className="text-gray-400 hover:text-gray-300"
-            >
-              <Mic className="size-4" />
-            </Button>
-          </TooltipTrigger>
-          <TooltipContent>Voice message</TooltipContent>
-        </Tooltip>
-      </TooltipProvider>
-      <Button
-        type="button"
-        variant="ghost"
-        size="icon"
-        className="ml-auto text-gray-400 hover:text-gray-300"
-      >
-        <MoreHorizontal className="size-4" />
-      </Button>
     </div>
   );
 }

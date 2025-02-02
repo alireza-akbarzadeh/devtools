@@ -1,36 +1,68 @@
 'use client';
 
-import * as React from 'react';
-import { Menu } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { ChatSidebar } from './chat-sidebar';
+import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { Menu } from 'lucide-react';
+import * as React from 'react';
 import { ChatInterface } from './chat-interface';
+import { useChatHistory } from './hooks/use-chat';
+import { ChatSidebar } from './chat-sidebar';
 
 export function ChatLayout() {
-  const [isSidebarOpen, setIsSidebarOpen] = React.useState(true);
+  const [isSidebarOpen, setIsSidebarOpen] = React.useState(false);
+  const {
+    chatHistory,
+    setChatHistory,
+    selectedChatId,
+    setSelectedChatId,
+    createNewChat,
+    deleteChat,
+    renameChat,
+  } = useChatHistory();
 
   return (
-    <div className="relative flex h-screen bg-black">
-      <ChatSidebar
-        isOpen={isSidebarOpen}
-        onClose={() => setIsSidebarOpen(false)}
-      />
-
-      <main className="flex flex-1 flex-col bg-[#1A1A1A]">
-        <div className="flex h-14 items-center border-b border-gray-800 px-4 md:hidden">
+    <div className="flex h-full bg-background">
+      {/* Mobile sidebar */}
+      <Sheet open={isSidebarOpen} onOpenChange={setIsSidebarOpen}>
+        <SheetTrigger asChild>
           <Button
             variant="ghost"
-            size="sm"
-            className="text-white"
-            onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+            size="icon"
+            className="fixed left-4 top-4 z-40 md:hidden"
           >
-            <Menu className="size-5" />
+            <Menu className="size-6" />
           </Button>
-        </div>
-        <div className="flex-1 overflow-hidden">
-          <ChatInterface />
-        </div>
-      </main>
+        </SheetTrigger>
+        <SheetContent side="left" className="w-72 border-0 p-0 shadow-lg">
+          <ChatSidebar
+            chatHistory={chatHistory}
+            setChatHistory={setChatHistory}
+            selectedChatId={selectedChatId}
+            setSelectedChatId={setSelectedChatId}
+            createNewChat={createNewChat}
+            deleteChat={deleteChat}
+            renameChat={renameChat}
+          />
+        </SheetContent>
+      </Sheet>
+
+      {/* Desktop sidebar */}
+      <div className="hidden border-r bg-muted/10 md:block md:w-72">
+        <ChatSidebar
+          chatHistory={chatHistory}
+          setChatHistory={setChatHistory}
+          selectedChatId={selectedChatId}
+          setSelectedChatId={setSelectedChatId}
+          createNewChat={createNewChat}
+          deleteChat={deleteChat}
+          renameChat={renameChat}
+        />
+      </div>
+
+      {/* Main chat area */}
+      <div className="relative flex-1 bg-background">
+        <ChatInterface />
+      </div>
     </div>
   );
 }

@@ -17,13 +17,17 @@ export function HeroLanding() {
     offset: ['start end', 'end start'],
   });
 
-  const scrollOnY = useTransform(scrollYProgress, [0, 1], [-300, 300]);
+  const backgroundPositionY = useTransform(
+    scrollYProgress,
+    [0, 1],
+    [-300, 300],
+  );
   return (
     <motion.section
       ref={sectionRef}
       style={{
         backgroundImage: `url(${startBg.src})`,
-        backgroundPositionY: scrollOnY,
+        backgroundPositionY,
       }}
       className="relative flex h-[492px] items-center overflow-hidden [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)] md:h-[800px]"
       aria-label="Hero section"

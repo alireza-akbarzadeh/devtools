@@ -1,26 +1,50 @@
+'use client';
+
 import { GlowEButton } from '../shared/glow-button';
 import startBg from '@/assets/stars.png';
+import {
+  motion,
+  useMotionValueEvent,
+  useScroll,
+  useTransform,
+} from 'motion/react';
+import { useRef } from 'react';
 
-export async function HeroLanding() {
+export function HeroLanding() {
+  const sectionRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ['start end', 'end start'],
+  });
+
+  const scrollOnY = useTransform(scrollYProgress, [0, 1], [-300, 300]);
   return (
-    <section
-      style={{ backgroundImage: `url(${startBg.src})` }}
+    <motion.section
+      ref={sectionRef}
+      style={{
+        backgroundImage: `url(${startBg.src})`,
+        backgroundPositionY: scrollOnY,
+      }}
       className="relative flex h-[492px] items-center overflow-hidden [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)] md:h-[800px]"
       aria-label="Hero section"
       role="banner"
+      animate={{ backgroundPositionX: startBg.width }}
+      transition={{ repeat: Infinity, ease: 'linear', duration: 120 }}
     >
       <div
         className="absolute inset-0 bg-[radial-gradient(75%_75%_at_center_center,rgb(140,69,255,.5)_15%,rgb(14,0,36,.5)_78%,transparent)] "
         aria-hidden="true"
       />
-      {/* Decorative planet and rings - hidden from screen readers */}
       <div
         className="position-center size-64 items-center justify-center rounded-full border border-white/20 bg-purple-500
           bg-[radial-gradient(50%_50%_at_16.8%_18.3%,white,rgba(184,148,255)_37.7%,rgb(24,0,66))] shadow-[-20px_-20px_50px_rgb(255,255,255,0.5),-20px_-20px_80px_rgb(255,255,255,0.1),0_0_50px_rgb(148,69,255)]
           md:size-96"
         aria-hidden="true"
       />
-      <div
+      <motion.div
+        transition={{ duration: 60, repeat: Infinity, ease: 'linear' }}
+        style={{ translateY: '-50%', translateX: '-50%' }}
+        animate={{ rotate: '1turn' }}
         className="position-center size-[344px] rounded-full border border-white opacity-20 md:size-[580px]"
         aria-hidden="true"
       >
@@ -29,18 +53,24 @@ export async function HeroLanding() {
         <div className="absolute left-full top-1/2 inline-flex size-5 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-white">
           <div className="size-2 rounded-full bg-white" />
         </div>
-      </div>
-      <div
+      </motion.div>
+      <motion.div
+        transition={{ duration: 60, repeat: Infinity, ease: 'linear' }}
+        style={{ translateY: '-50%', translateX: '-50%' }}
+        animate={{ rotate: '-1turn' }}
         className="position-center size-[444px] rounded-full border border-dashed border-white/20 md:size-[780px]"
         aria-hidden="true"
       />
-      <div
+      <motion.div
+        transition={{ duration: 60, repeat: Infinity, ease: 'linear' }}
+        style={{ translateY: '-50%', translateX: '-50%' }}
+        animate={{ rotate: '1turn' }}
         className="position-center absolute size-[544px] rounded-full border border-white opacity-20 md:size-[980px]"
         aria-hidden="true"
       >
         <div className="position-center !left-0 size-2 rounded-full bg-white" />
         <div className="absolute left-full top-1/2 size-2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white" />
-      </div>
+      </motion.div>
 
       <div className="container relative mt-16">
         <h1
@@ -62,6 +92,6 @@ export async function HeroLanding() {
           </GlowEButton>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }

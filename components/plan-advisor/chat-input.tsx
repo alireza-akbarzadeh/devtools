@@ -19,7 +19,7 @@ export function ChatInput({ input, setInput, onSubmit }: ChatInputProps) {
     if (textarea) {
       textarea.style.height = 'auto';
       const scrollHeight = Math.min(textarea.scrollHeight, 300);
-      textarea.style.height = `${scrollHeight}px`;
+      textarea.style.height = `${scrollHeight}px`
     }
   };
 

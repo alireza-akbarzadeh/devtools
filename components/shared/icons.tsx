@@ -35,6 +35,9 @@ import {
   HelpCircleIcon,
   Edit,
   Share2,
+  Gauge,
+  MousePointerClick,
+  Sparkles,
 } from 'lucide-react';
 import { LogoIcon } from '@/assets';
 
@@ -42,9 +45,12 @@ export type Icon = LucideIcon;
 
 export const Icons = {
   add: Plus,
+  sparkles: Sparkles,
   mail: Mail,
+  gauge: Gauge,
   edit: Edit,
   share: Share2,
+  mousePointerClick: MousePointerClick,
   chevronDown: ChevronDown,
   arrowRight: ArrowRight,
   bot: Bot,

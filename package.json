@@ -88,7 +88,6 @@
     "react-dom": "^18.2.0",
     "react-email": "2.1.1",
     "react-hook-form": "^7.51.3",
-    "react-lottie": "^1.2.10",
     "react-textarea-autosize": "^8.5.3",
     "resend": "^3.2.0",
     "sharp": "^0.33.3",

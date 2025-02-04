@@ -1,3 +1,4 @@
+import { Icons } from '@/components/shared/icons';
 import { InfoLdg } from 'types';
 
 export const infos: InfoLdg[] = [
@@ -54,7 +55,7 @@ export const infos: InfoLdg[] = [
 
 export const features = [
   {
-    icon: '/lottie/vroom.json',
+    icon: 'gauge',
     title: 'User-friendly dashboard',
     isNew: false,
     backgroundPositionX: 0,
@@ -62,7 +63,7 @@ export const features = [
     backgroundPositionZ: 150,
   },
   {
-    icon: '/lottie/click.json',
+    icon: 'mousePointerClick',
     title: 'One-click optimization',
     isNew: false,
     backgroundPositionX: 98,
@@ -70,7 +71,7 @@ export const features = [
     backgroundPositionZ: 135,
   },
   {
-    icon: '/lottie/stars.json',
+    icon: 'sparkles',
     title: 'Smart keyword generator',
     isNew: true,
     backgroundPositionX: 100,

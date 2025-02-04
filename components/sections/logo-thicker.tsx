@@ -1,3 +1,4 @@
+'use client';
 import {
   AcmeLogo,
   ApexLogo,
@@ -6,9 +7,15 @@ import {
   PulseLogo,
   QuantumLogo,
 } from '@/assets';
-import Image from 'next/image';
+import { motion } from 'motion/react';
 
 const COMPANY_LOGOS = [
+  { src: AcmeLogo, name: 'Acme Corporation' },
+  { src: ApexLogo, name: 'Apex Technologies' },
+  { src: CelestialLogo, name: 'Celestial Systems' },
+  { src: EchoLogo, name: 'Echo Innovations' },
+  { src: PulseLogo, name: 'Pulse Digital' },
+  { src: QuantumLogo, name: 'Quantum Solutions' },
   { src: AcmeLogo, name: 'Acme Corporation' },
   { src: ApexLogo, name: 'Apex Technologies' },
   { src: CelestialLogo, name: 'Celestial Systems' },
@@ -36,19 +43,22 @@ export function LogoThicker() {
             role="group"
             aria-label="Partner company logos"
           >
-            <div className="flex gap-6">
+            <motion.div
+              initial={{ translate: '-50%' }}
+              animate={{ translate: '0' }}
+              transition={{ repeat: Infinity, ease: 'linear', duration: 30 }}
+              className="flex flex-none -translate-x-1/2 flex-row gap-14 pr-14"
+            >
               {COMPANY_LOGOS.map((logo) => (
-                <div key={logo.name} className="relative aspect-square w-full">
-                  <Image
-                    src={logo.src.src}
-                    alt={`${logo.name} logo`}
-                    fill
-                    sizes="(max-width: 768px) 60vw, 60vw"
-                    className="object-contain"
-                  />
-                </div>
+                // eslint-disable-next-line @next/next/no-img-element
+                <img
+                  key={logo.name}
+                  src={logo.src.src}
+                  alt={`${logo.name} logo`}
+                  className="h-6 w-auto flex-none"
+                />
               ))}
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>

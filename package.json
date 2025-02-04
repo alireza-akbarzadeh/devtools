@@ -73,7 +73,6 @@
     "concurrently": "^8.2.2",
     "contentlayer": "^0.3.4",
     "date-fns": "^3.6.0",
-    "framer-motion": "^12.0.6",
     "lint-staged": "15.2.2",
     "lucide-react": "^0.372.0",
     "motion": "^12.0.8",

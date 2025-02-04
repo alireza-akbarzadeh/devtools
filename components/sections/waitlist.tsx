@@ -1,14 +1,35 @@
+'use client';
+
 import { GlowEButton } from '../shared/glow-button';
 import { HeaderSection } from '../shared/header-section';
-import { StarsBg, GridLense } from '@/assets';
+import { GridLense } from '@/assets';
+
+import startBg from '@/assets/stars.png';
+import { motion, useScroll, useTransform } from 'motion/react';
+import { useRef } from 'react';
 
 export function WaitList() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ['start end', 'end start'],
+  });
+  const backgroundPositionY = useTransform(
+    scrollYProgress,
+    [0, 1],
+    [-300, 300],
+  );
   return (
-    <section className="py-20 md:py-24">
+    <section className="py-20 md:py-24" ref={sectionRef}>
       <div className="container">
-        <div
+        <motion.div
           className="relative overflow-hidden rounded-xl border border-purple-200/50 bg-gradient-to-br from-purple-50/80 to-white py-24 dark:border-white/50 dark:from-transparent dark:to-transparent"
-          style={{ backgroundImage: `url(${StarsBg.src})` }}
+          style={{
+            backgroundImage: `url(${startBg.src})`,
+            backgroundPositionY,
+          }}
+          animate={{ backgroundPositionX: startBg.width }}
+          transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}
         >
           <div
             className="absolute inset-0 bg-[rgb(74,32,138)]/10 bg-blend-overlay [mask-image:radial-gradient(50%_50%_at_50%_35%,black,transparent)] 
@@ -26,7 +47,7 @@ export function WaitList() {
               <GlowEButton>Join WaitList</GlowEButton>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

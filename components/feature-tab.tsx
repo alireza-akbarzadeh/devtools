@@ -13,20 +13,11 @@ type FeatureTabProps = {
   icon: string;
   title: string;
   isNew: boolean;
-  backgroundPositionX: number;
-  backgroundPositionY: number;
-  backgroundPositionZ: number;
+  onTabCLick: () => void;
 };
 
 export function FeatureTab(props: FeatureTabProps) {
-  const {
-    icon,
-    title,
-    isNew,
-    backgroundPositionX,
-    backgroundPositionY,
-    backgroundPositionZ,
-  } = props;
+  const { icon, title, isNew, onTabCLick } = props;
 
   const tabRef = useRef<HTMLDivElement>(null);
   const xPercentage = useMotionValue(0);
@@ -59,6 +50,9 @@ export function FeatureTab(props: FeatureTabProps) {
 
   return (
     <div
+      onClick={onTabCLick}
+      role="button"
+      aria-label="selected Tab Button"
       ref={tabRef}
       key={title}
       className="group relative flex items-center gap-4 overflow-hidden rounded-lg border border-gray-200 bg-white p-2.5 dark:border-white/20 dark:bg-background lg:flex-1"

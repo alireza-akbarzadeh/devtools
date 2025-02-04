@@ -53,14 +53,14 @@ export const infos: InfoLdg[] = [
   },
 ];
 
-export const features = [
+export const tabs = [
   {
     icon: 'gauge',
     title: 'User-friendly dashboard',
     isNew: false,
     backgroundPositionX: 0,
     backgroundPositionY: 0,
-    backgroundPositionZ: 150,
+    backgroundSizeX: 150,
   },
   {
     icon: 'mousePointerClick',
@@ -68,7 +68,7 @@ export const features = [
     isNew: false,
     backgroundPositionX: 98,
     backgroundPositionY: 100,
-    backgroundPositionZ: 135,
+    backgroundSizeX: 135,
   },
   {
     icon: 'sparkles',
@@ -76,7 +76,7 @@ export const features = [
     isNew: true,
     backgroundPositionX: 100,
     backgroundPositionY: 27,
-    backgroundPositionZ: 177,
+    backgroundSizeX: 177,
   },
 ];
 

@@ -121,7 +121,8 @@
       <workItem from="1735731039632" duration="287000" />
       <workItem from="1738151070333" duration="795000" />
       <workItem from="1738151907096" duration="7876000" />
-      <workItem from="1738673920410" duration="5171000" />
+      <workItem from="1738673920410" duration="5234000" />
+      <workItem from="1738760021830" duration="1061000" />
     </task>
     <task id="LOCAL-00001" summary="feat: setup devtools app for the new landing page">
       <option name="closed" value="true" />
@@ -155,7 +156,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738678484824</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="refactor: animate waitlist components">
+      <option name="closed" value="true" />
+      <created>1738679153915</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1738679153915</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
